@@ -17,4 +17,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Agregar el código para que la aplicación escuche en el puerto
+var port = process.env.PORT || 3000;  // Usar el puerto proporcionado por el entorno o 3000
+app.listen(port, function () {
+  console.log(`Servidor escuchando en el puerto ${port}`);
+});
+
 module.exports = app;
